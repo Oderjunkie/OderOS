@@ -77,9 +77,13 @@
 %define SCAN_LEFT		0x4B
 %define SCAN_NUM_CENTER	0x4C
 %define SCAN_NUM_MINUS	0x4D
-%define SCAN_NUM_MINUS	0x4D
-
-
+%define SCAN_NUM_PLUS	0x4E
+%define SCAN_END		0x4F
+%define SCAN_DOWN		0x50
+%define SCAN_PGDN		0x51
+%define SCAN_INS		0x52
+%define SCAN_DEL		0x53
+; SysReq doesn't have an entry what
 %define BIT_INS			0x80
 %define BIT_CAPS		0x40
 %define BIT_NUM			0x20
@@ -88,9 +92,3 @@
 %define BIT_CTRL		0x04
 %define BIT_LSHIFT		0x02
 %define BIT_RSHIFT		0x01
-os_key_scanascii:
-	pusha
-	mov ax, 0x0100
-	int 0x16
-	
-	popa
