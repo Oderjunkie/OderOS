@@ -38,21 +38,21 @@ UpdateHUD:
 	mov ds, ax
 	mov ah, 0x02
 	int 0x1a
-	jnc .end ; The carry flag is set when the clock is NOT OPERATING.
+	;jnc .end ; The carry flag is set when the clock is NOT OPERATING.
 	mov al, ch
 	call .seperate
 	or ax, 0x3030
-	; ah -> 145 (0x91)
-	; al -> 147 (0x93)
-	mov [0x0091], ah
-	mov [0x0093], al
+	; ah -> 144 (0x90)
+	; al -> 146 (0x92)
+	mov [0x0090], ah
+	mov [0x0092], al
 	mov al, cl
 	call .seperate
 	or ax, 0x3030
-	; ah -> 151 (0x97)
-	; al -> 153 (0x99)
-	mov [0x0097], ah
-	mov [0x0099], al
+	; ah -> 150 (0x96)
+	; al -> 152 (0x98)
+	mov [0x0096], ah
+	mov [0x0098], al
 	.end:
 	xor ax, ax
 	mov ds, ax
